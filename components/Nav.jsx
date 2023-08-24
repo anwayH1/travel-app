@@ -4,6 +4,10 @@ import Link from 'next/link'
 import Image from 'next/image' 
 import { useState ,useEffect } from 'react'
 import {signIn ,signOut , useSession ,getProviders} from 'next-auth/react'
+import {navlinks} from '@constant'
+import BtnCommon from './BtnCommon'
+import{GrMenu} from 'react-icons/gr' 
+import {TfiClose} from 'react-icons/tfi'
 const Nav = () => {
 const {data:session} = useSession() ;
 
@@ -24,41 +28,84 @@ setPro()
 
 },[])
 
-
+const [isToggleMenu , setIsToggleMenu] = useState(false)
   return (<div className="">
 
      {/* <nav className='flex gap-5 bg-red justify-end items-center py-6 text-xl font-semibold text-slate-50 drop-shadow-lg  bg-orange-300 px-20'> */}
 
-<nav>
-      <h4>
-        <Image  src={'/assets/Screenshot_2023-08-20_at_11.16.32-removebg-preview.png'} width={40} height={40} alt="logo" class="logo" /> 
-        Travelio</h4>
-      <ul id="menu_bx">
-        <li><a href="#">Discover</a></li>
-        <li><a href="https://discord.gg/Fmzh2Rpq">Community</a></li>
-        <li><a href="#Special">Special Deals</a></li>
-        <li><a href="https://anway.carrd.co/">About Us </a></li>
-        {/* <li><a href="#">Register</a></li> */}
-        {/* session btn start her ! */}
+<nav className='flex  flex-row  items-center w-full justify-between py-2'>
+      <div className="logo flex flex-row items-end">
+      <Image  src={'/assets/Screenshot_2023-08-20_at_11.16.32-removebg-preview.png'} width={40} height={40} alt="logo" className="logo" /> 
+      <span className='font-semibold' >Travilo</span>
+      </div>
+        
+        {/* for pc devices */}
+      <div id="menu_bx  " className='hidden md:flex flex-row  text-slate-600  items-center '>
+        {navlinks.map((link) =>(
+          <Link href={link.link} className='px-3 text-[12px]' >{link.name}</Link>
+        ))}
+      
+      
         {session?.user ?
 <>
-<li><a  onClick={()=>signOut()}  className="text-red-500"href="#">LogOut</a></li>
-<Image src={session?.user.image} className='rounded-full' width={40} height={40} alt='image' />
+<button  onClick={()=>signOut()}  className="text-red-500 text-[12px]"href="/">LogOut</button>
+<Image src={session?.user.image} className='rounded-full bg-red-600 ' width={40} height={40} alt='image' />
 </>
 :<>
-{/* <button>Sign In</button> */}
 {providers && 
 Object.values(providers).map((provider)=>(
-   <li><a key={provider.name}
-    onClick={()=>signIn(provider.id)} href="#">Register</a></li>
+   <BtnCommon  key={provider.name} 
+   name="Resistor"
+   type="button"
+   extraclass={"rounded-full text-[12px] hover:bg-green-400 py-1"}
+  
+    clkfun={()=>signIn(provider.id)} 
+    />
 
 ))
      
 }
 </>
 }
-      </ul>
-      <i class="bi bi-three-dots"></i>
+      </div>
+      {/* menu icons */}
+      <button 
+      onClick={()=>setIsToggleMenu(pre=>!pre)}
+      className='text-black md:hidden'
+      >{!isToggleMenu ? <GrMenu width={50} height={50} className=''  /> :<TfiClose width={50} height={50} />}</button>
+
+{/* for the mobile devices */}
+      <div id="menu_bx  " className= {` block md:hidden p-2 absolute top-[70px] right-2 shadow-xl bg-white rounded-lg ${isToggleMenu? "block" :"hidden"}`} >
+      <div className=' flex
+      flex-col  text-slate-600  items-center '>
+        {navlinks.map((link ) =>(
+          <Link href={link.link} className='px-3 text-[12px]' >{link.name}</Link>
+        ))}
+      
+      
+        {session?.user ?
+<>
+<button  onClick={()=>signOut()}  className="text-red-500 text-[12px]"href="/">LogOut</button>
+<Image src={session?.user.image} className='rounded-full bg-red-600 ' width={40} height={40} alt='image' />
+</>
+:<>
+{providers && 
+Object.values(providers).map((provider)=>(
+   <BtnCommon  key={provider.name} 
+   name="Resistor"
+   type="button"
+   extraclass={"rounded-full text-[12px] hover:bg-green-400 py-[1px]"}
+  
+    clkfun={()=>signIn(provider.id)} 
+    />
+
+))
+     
+}
+</>
+}
+      </div>
+     </div>
     </nav>
   </div>
 
