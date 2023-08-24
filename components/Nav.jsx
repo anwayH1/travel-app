@@ -71,15 +71,15 @@ Object.values(providers).map((provider)=>(
       {/* menu icons */}
       <button 
       onClick={()=>setIsToggleMenu(pre=>!pre)}
-      className='text-black md:hidden'
-      >{!isToggleMenu ? <GrMenu width={50} height={50} className=''  /> :<TfiClose width={50} height={50} />}</button>
+      className='text-black  md:hidden'
+      >{!isToggleMenu ? <GrMenu width={50} height={50} className='w-[28px] h-[28px]'  /> :<TfiClose width={50} height={50} className='w-[28px] h-[28px]'/>}</button>
 
 {/* for the mobile devices */}
-      <div id="menu_bx  " className= {` block md:hidden p-2 absolute top-[70px] right-2 shadow-xl bg-white rounded-lg ${isToggleMenu? "block" :"hidden"}`} >
+      <div id="menu_bx  " className= {`z-50 block md:hidden p-2 absolute top-[70px] right-2 shadow-xl bg-white rounded-lg ${isToggleMenu? "block" :"hidden"}`} >
       <div className=' flex
       flex-col  text-slate-600  items-center '>
         {navlinks.map((link ) =>(
-          <Link href={link.link} className='px-3 text-[12px]' >{link.name}</Link>
+          <Link href={link.link} className='px-3 text-[14px]' >{link.name}</Link>
         ))}
       
       
