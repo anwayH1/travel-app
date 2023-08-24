@@ -149,6 +149,7 @@ export const destination = [
     "London",
 ]
 
+
 export const offersDestination = [
     {
         name: "Lotus Temple-Delhi",
