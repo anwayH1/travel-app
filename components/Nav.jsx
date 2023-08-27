@@ -55,9 +55,9 @@ const [isToggleMenu , setIsToggleMenu] = useState(false)
 {providers && 
 Object.values(providers).map((provider)=>(
    <BtnCommon  key={provider.name} 
-   name="Resistor"
+   name="Register"
    type="button"
-   extraclass={"rounded-full text-[12px] hover:bg-green-400 py-1"}
+   extraclass={"rounded-full text-[12px] hover:bg-green-800 py-1"}
   
     clkfun={()=>signIn(provider.id)} 
     />
@@ -92,9 +92,9 @@ Object.values(providers).map((provider)=>(
 {providers && 
 Object.values(providers).map((provider)=>(
    <BtnCommon  key={provider.name} 
-   name="Resistor"
+   name="Register"
    type="button"
-   extraclass={"rounded-full text-[12px] hover:bg-green-400 py-[1px]"}
+   extraclass={"rounded-full text-[12px] hover:bg-green-800 py-[1px] w-[120px] h-[20px] px-2"}
   
     clkfun={()=>signIn(provider.id)} 
     />

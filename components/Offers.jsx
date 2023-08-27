@@ -43,8 +43,8 @@ function Offers() {
 
     <div className="">
       <div className="flex flex-col justify-center items-center">
-      <h1 className='text-[38px] font-semibold'>Best Tour Package Offers</h1>
-      <h3 className='text-[20px] font-semibold'>Choose Your Next Destination</h3>
+      <h1 className='text-[24px] md:text-[29px] lg:text-[38px] font-semibold'>Best Tour Package Offers</h1>
+      <h3 className='text-[17px] md:text-[19px] lg:text-[21px] font-semibold'>Choose Your Next Destination</h3>
       </div>
     <div className='flex flex-row justify-center items-center flex-wrap'>
 

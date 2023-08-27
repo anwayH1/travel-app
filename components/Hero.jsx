@@ -59,10 +59,10 @@ datacard.map((data,i)=>(
   </div>
  
   <div className="flex flex-row justify-between mt-3">
-    <BtnCommon name={"Readnow"} extraclass={"py-[0px] w-[100px] h-[30px]"}/>
+    <BtnCommon name={"Read now"} extraclass={"py-[0px] w-[100px] h-[30px]"}/>
     <div className="flex flex-col">
       <span className='font-semibold'>{data.cityname}</span>
-      <span className='font-bold text-green-400'>{data.price}</span>
+      <span className='font-bold text-green-800'>{data.price}</span>
     </div>
   </div>
 </div>
