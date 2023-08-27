@@ -1,7 +1,7 @@
 const Foooter =()=>{
 return (
     <div className="flex flex-col justify-center items-center bg-blue-50 mt-4 ">
-   <h3 className="font-semibold text-[32px] text-center">Subscribe & <br />
+   <h3 className="font-semibold text-[26px] md:text-[32px] text-center">Subscribe & <br />
 Get Special Discount</h3>
 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis laboriosam nihil</p>
 
