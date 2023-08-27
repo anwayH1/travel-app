@@ -210,6 +210,10 @@ export const navlinks = [
         name: "Special Deals",
         link: "/"
     },
+    {
+        name:"Community",
+        link:"https://discord.com/invite/Fmzh2Rpq"
+    }
 
 
 ]
