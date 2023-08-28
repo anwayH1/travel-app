@@ -2,20 +2,21 @@ import React from 'react'
 import Image from 'next/image'
 import { AiFillHeart , TbMessageCircle2Filled} from "../icons"
 import {offersDestination} from "@constant"
+
 const OfferCard = ({name,img,descrip,likecount,msgcount,price,days,country})=>{
   return <div className='p-3 flex flex-col justify-center items-center '>
   <div className="bg-green-300 text-green-900 p-2 px-4 w-fit h-fit rounded-full font-bold">{name}</div>
   <div className="mt-2">
     {/* for images */}
     <div className="relative w-[200px]">
-    <Image src={img} width={100} height={200} className='h-[250px] w-[200px] bg-gray-500 rounded-md  '/>
-<div className="absolute bottom-0 left-0 right-0 text-white bg-gray-700 font-semibold">{descrip}</div>
+    <Image src={img} width={100} height={200} className='h-[250px] w-[200px] bg-gray-500 rounded-md rounded-b-none  '/>
+<div className="absolute bottom-0 left-0 right-0 text-white bg-gray-700 font-semibold opacity-60 px-2 ">{descrip}</div>
     </div>
     {/* for like container */}
-    <div className="flex flex-row justify-between p-[6px]  border border-t-0 border-gray-500 rounded-md">
+    <div className="flex flex-row justify-between p-[6px]  border border-t-0 rounded-t-none border-gray-500 rounded-md">
     <div className="">
     <div className="flex">
-      <div className="flex space-x-1">
+      <div className="flex space-x-1 mr-2">
         <AiFillHeart className='text-red-500'/>
       <span>{likecount}</span>
       </div>
