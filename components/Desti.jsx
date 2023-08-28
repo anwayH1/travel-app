@@ -23,13 +23,13 @@ function Desti() {
     <div className='flex flex-col justify-center items-center md:justify-normal md:items-start w-full md:w-[300px] md:mr-8'>
       <h1 className='text-[28px] font-semibold'>Our Destination</h1>
       <p>Choose your next Destination</p>
-      <div className="space-y-2">
+      <div className="space-y-4">
 
       {destination.map((data, i)=>(
         <div key={i} className="font-semibold text-gray-600 ">{data}</div>
       ))}
       </div>
-<p>Included : Air ticket, Hotel, Airport Transfer, Breakfast, Tour and Many more!!</p>
+<p  className='px-2 my-3'>Included : Air ticket, Hotel, Airport Transfer, Breakfast, Tour and Many more!!</p>
 <button className='bg-black text-[12px] p-2  rounded-full text-white w-fit px-6'>More Info</button>
     </div>
     {/* for image  conainer*/}

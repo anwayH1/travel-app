@@ -36,11 +36,11 @@ export default function Hero() {
 {/* for glass morphism effect */}
 <div className="  relative ">
 
-<div className="absolute h-[265px] w-[95%]  bg-white opacity-50  backdrop-blur-xl  z-[-1] top-[-30px] mx-3 md:mx-[50px]  shadow-xl  right-0 left-0 rounded-2xl ">
+<div className="absolute h-[265px] w-[96%]  bg-white opacity-50  backdrop-blur-xl  z-[-1] top-[-30px] mx-3 md:mx-[50px]  shadow-xl  right-0 left-0 md:left-[-31px] rounded-2xl ">
   </div>
 {/* for all searche item container  */}
-<div className="mx-3 md:mx-[50px]">
-<h3 className='text-[20px] font-bold ml-2 '>Countries to visit</h3>
+<div className="mx-3 md:ml-[40px] md:mr-[55px]">
+<h3 className='text-[20px] font-bold  '>Countries to visit</h3>
 {/* for countries container */}
 <div className=" scrollh flex flex-row  h-[250px] ">
 
